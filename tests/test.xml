@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit>
+    <testsuites>
+        <testsuite name="prechecks">
+            <file>prechecks/get_type_test.php</file>
+            <file>prechecks/build_type_test.php</file>
+            <file>prechecks/implementation_test.php</file>
+        </testsuite>
+        <testsuite>
+            <file>utils/EnumerableReflectionTest.php</file>
+        </testsuite>
+        <testsuite name="ToObject"> -->
+            <file>cls/ObjectClassTest.php</file>
+            <file>cls/ArrayClassTest.php</file>
+            <file>cls/HashClassTest.php</file>
+            <file>cls/StringClassTest.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>
