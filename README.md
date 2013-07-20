@@ -159,6 +159,7 @@ By downloading this package you should have:
 - Source code of ToObject
 - Source code of the Unit Tests
   
+  You can find some of the unit test results [here][unit-test-results] and the documentation [here][documentation].
   
 # Tests
 
@@ -172,7 +173,8 @@ This package is developed on OSX Lion using php5.4.6 and tested with PHPUnit:
     * php5.5.0
 
 
- 
+[unit-test-results]: http://devbin.github.io/ToObject/testresults/index.html
+[documentation]:     http://devbin.github.io/ToObject/documentation/index.html
 [php5.4.0]:     http://php.net/get/php-5.4.0.tar.gz/from/a/mirror
 [php5.4.6]:     http://php.net/get/php-5.4.6.tar.gz/from/a/mirror
 [php5.4.7]:     http://php.net/get/php-5.4.7.tar.gz/from/a/mirror
