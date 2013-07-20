@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Devbin\libs\ToObject\ObjectClass
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+            <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Devbin.html">Devbin</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <div class="row">
+        <div class="span4">
+                    <span class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </span>
+    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                    <li class="method public">
+        <a href="#method___tostring" title="__tostring :: __tostring
+Returns `self&#039; as a string.">
+            <span class="description">__tostring
+Returns `self&#039; as a string.</span><pre>__tostring</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_to_native" title="to_native :: to_native
+Returns a native PHP data type.">
+            <span class="description">to_native
+Returns a native PHP data type.</span><pre>to_native</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_to_s" title="to_s :: to_s
+Returns a string presentation of `self&#039;.">
+            <span class="description">to_s
+Returns a string presentation of `self&#039;.</span><pre>to_s</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_get_type" title="get_type :: get_type
+Tries to guess which TYPE_* $data will fit.">
+            <span class="description">get_type
+Tries to guess which TYPE_* $data will fit.</span><pre>get_type</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getStorage" title="getStorage :: getStorage
+Returns what is in `self&#039;.">
+            <span class="description">getStorage
+Returns what is in `self&#039;.</span><pre>getStorage</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getEncoding" title="getEncoding :: getEncoding
+Returns the internal encoding.">
+            <span class="description">getEncoding
+Returns the internal encoding.</span><pre>getEncoding</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_klass" title="klass :: klass
+Returns the type of `self&#039;.">
+            <span class="description">klass
+Returns the type of `self&#039;.</span><pre>klass</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_is_a" title="is_a :: is_a
+Checks whether self is of a type.">
+            <span class="description">is_a
+Checks whether self is of a type.</span><pre>is_a</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_methods" title="methods :: methods
+Merely a `get_class_methods()&#039; wrapped in an ArrayClass.">
+            <span class="description">methods
+Merely a `get_class_methods()&#039; wrapped in an ArrayClass.</span><pre>methods</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_eql" title="eql :: eql
+Checks whether two objects have the same content.">
+            <span class="description">eql
+Checks whether two objects have the same content.</span><pre>eql</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_equal" title="equal :: equal
+Checks whether two objects have the same reference.">
+            <span class="description">equal
+Checks whether two objects have the same reference.</span><pre>equal</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                        <li class="method protected">
+                            <a href="#method_builder" title="builder :: builder
+Recursively builds an object to use with ToObject and all its goodies.">
+                                <span class="description">builder
+Recursively builds an object to use with ToObject and all its goodies.</span><pre>builder</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                            <li class="method private">
+                            <a href="#method_build_arrayClass" title="build_arrayClass :: build_arrayClass
+Builds an array to use as internal storage for an ArrayClass.">
+                                <span class="description">build_arrayClass
+Builds an array to use as internal storage for an ArrayClass.</span><pre>build_arrayClass</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_build_hashClass" title="build_hashClass :: build_arrayClass
+Builds an stdClass to use as internal storage for an HashClass.">
+                                <span class="description">build_arrayClass
+Builds an stdClass to use as internal storage for an HashClass.</span><pre>build_hashClass</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_get_instance" title="get_instance :: get_instance
+Simply returns an instance of $type with $data.">
+                                <span class="description">get_instance
+Simply returns an instance of $type with $data.</span><pre>get_instance</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_DEFAULT_ENCODING" title="DEFAULT_ENCODING :: Default encoding of `self&#039;.">
+                        <span class="description">Default encoding of `self&#039;.</span><pre>DEFAULT_ENCODING</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_TYPE_STRINGCLASS" title="TYPE_STRINGCLASS :: ">
+                        <span class="description"></span><pre>TYPE_STRINGCLASS</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_TYPE_ARRAYCLASS" title="TYPE_ARRAYCLASS :: ">
+                        <span class="description"></span><pre>TYPE_ARRAYCLASS</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_TYPE_HASHCLASS" title="TYPE_HASHCLASS :: ">
+                        <span class="description"></span><pre>TYPE_HASHCLASS</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_TYPE_OKAY" title="TYPE_OKAY :: ">
+                        <span class="description"></span><pre>TYPE_OKAY</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_TYPE_SKIP" title="TYPE_SKIP :: ">
+                        <span class="description"></span><pre>TYPE_SKIP</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>ObjectClass</h1>
+                <small style="display: block; text-align: right">
+                                                                Implements \Countable
+                                    </small>
+                <p class="short_description">ObjectClass</p>
+                <div class="details">
+                    <div class="long_description">
+                        <p>ObjectClass is the root of ToObject. Its methods are available in all
+ToObject's classes except when explicitly overridden. Traits and Interfaces
+are considered not to be part of this rule. ObjectClass is used to
+instantiate any of its classes in a recursive way so one can benefit from
+its methods in every sub-element (e/g: nested arrays).</p>
+
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        abstract
+                                                                            </th>
+                                    <td>
+                                                                                
+
+                                    </td>
+                                </tr>
+                                                                                                                                                                                                                                                                                        </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___tostring"></a>
+                        <div class="element clickable method public method___tostring" data-toggle="collapse" data-target=".method___tostring .collapse">
+                            <h2>__tostring
+Returns `self&#039; as a string.</h2>
+                            <pre>__tostring() : string</pre>
+                            <div class="labels">
+                                                                                                                                <span class="label">abstract</span>                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>specific notes.</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_to_native"></a>
+                        <div class="element clickable method public method_to_native" data-toggle="collapse" data-target=".method_to_native .collapse">
+                            <h2>to_native
+Returns a native PHP data type.</h2>
+                            <pre>to_native(bool $recursive = true) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                <span class="label">abstract</span>                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$recursive</h4>
+                                                <code>bool</code><p><p>Whether to return everything or just the first level as native PHP.</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_to_s"></a>
+                        <div class="element clickable method public method_to_s" data-toggle="collapse" data-target=".method_to_s .collapse">
+                            <h2>to_s
+Returns a string presentation of `self&#039;.</h2>
+                            <pre>to_s() : string</pre>
+                            <div class="labels">
+                                                                                                                                <span class="label">abstract</span>                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_builder"></a>
+                        <div class="element clickable method protected method_builder" data-toggle="collapse" data-target=".method_builder .collapse">
+                            <h2>builder
+Recursively builds an object to use with ToObject and all its goodies.</h2>
+                            <pre>builder(mixed $object, string $encoding = self::DEFAULT_ENCODING) : array</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    uses
+                                                </th>
+                                                <td>
+                                                                                                                                                                    
+
+                                                                                                                                                                    
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$object</h4>
+                                                <code>mixed</code><p><p>The input object.</p>
+</p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$encoding</h4>
+                                                <code>string</code><p><p>Encoding to use (necessary for StringClass' multibyte string functions)</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>used for internal storage of the appropriate *Class object.</p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_build_arrayClass"></a>
+                        <div class="element clickable method private method_build_arrayClass" data-toggle="collapse" data-target=".method_build_arrayClass .collapse">
+                            <h2>build_arrayClass
+Builds an array to use as internal storage for an ArrayClass.</h2>
+                            <pre>build_arrayClass(array $object, string $encoding) : array</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    used-by
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>ObjectClass::builder()</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$object</h4>
+                                                <code>array</code><p><p>The input object.</p>
+</p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$encoding</h4>
+                                                <code>string</code><p><p>Encoding to use (necessary for StringClass' multibyte string functions)</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>used for internal storage of the appropriate *Class object.</p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_build_hashClass"></a>
+                        <div class="element clickable method private method_build_hashClass" data-toggle="collapse" data-target=".method_build_hashClass .collapse">
+                            <h2>build_arrayClass
+Builds an stdClass to use as internal storage for an HashClass.</h2>
+                            <pre>build_hashClass(\stdClass $object, string $encoding) : \stdClass</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    used-by
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>ObjectClass::builder()</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$object</h4>
+                                                <code>\stdClass</code><p><p>The input object.</p>
+</p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$encoding</h4>
+                                                <code>string</code><p><p>Encoding to use (necessary for StringClass' multibyte string functions)</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\stdClass</code><p><p>used for internal storage of the appropriate *Class object.</p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_get_instance"></a>
+                        <div class="element clickable method private method_get_instance" data-toggle="collapse" data-target=".method_get_instance .collapse">
+                            <h2>get_instance
+Simply returns an instance of $type with $data.</h2>
+                            <pre>get_instance(mixed $data, int $type, string $encoding) : mixed</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>mixed</code><p><p>Constructional data for the new instance.</p>
+</p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$type</h4>
+                                                <code>int</code><p><p>Instance type, retrieved by self::get_type().</p>
+</p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$encoding</h4>
+                                                <code>string</code><p><p>Constructional encoding for the new instance.</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Returns the new instance unless $type is either SKIP or OKAY.</p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_get_type"></a>
+                        <div class="element clickable method public method_get_type" data-toggle="collapse" data-target=".method_get_type .collapse">
+                            <h2>get_type
+Tries to guess which TYPE_* $data will fit.</h2>
+                            <pre>get_type(mixed $data) : int</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Names are self-explanatory except maybe for OKAY and SKIP:
+- OKAY: $data already is an instance of String-, Array-, or Hash- Class
+- SKIP: ToObject has no clue what $data is. This is NOT a bug/error, it
+            means $data could be an integer or bool     etc..., which are
+            not handled by ToObject. Thus, it will be left untouched.</p>
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>mixed</code><p><p>Data of which its type should be known.</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>int</code><p><p>One of the TYPE_* constants.</p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getStorage"></a>
+                        <div class="element clickable method public method_getStorage" data-toggle="collapse" data-target=".method_getStorage .collapse">
+                            <h2>getStorage
+Returns what is in `self&#039;.</h2>
+                            <pre>getStorage() : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Whatever is stored in `self' (string / array).</p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getEncoding"></a>
+                        <div class="element clickable method public method_getEncoding" data-toggle="collapse" data-target=".method_getEncoding .collapse">
+                            <h2>getEncoding
+Returns the internal encoding.</h2>
+                            <pre>getEncoding() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>Internal encoding.</p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_klass"></a>
+                        <div class="element clickable method public method_klass" data-toggle="collapse" data-target=".method_klass .collapse">
+                            <h2>klass
+Returns the type of `self&#039;.</h2>
+                            <pre>klass(bool $full = false) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$full</h4>
+                                                <code>bool</code><p><p>Whether to return the full path.</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>Type of `self'.</p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_is_a"></a>
+                        <div class="element clickable method public method_is_a" data-toggle="collapse" data-target=".method_is_a .collapse">
+                            <h2>is_a
+Checks whether self is of a type.</h2>
+                            <pre>is_a(\Devbin\libs\ToObject\ObjectClass $type, bool $ns = true) : bool</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$type</h4>
+                                                <code><a href="../classes/Devbin.libs.ToObject.ObjectClass.html">\Devbin\libs\ToObject\ObjectClass</a></code><p><p>The type to compare `self' to.</p>
+</p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$ns</h4>
+                                                <code>bool</code><p><p>Match against this namespace.</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>bool</code><p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_methods"></a>
+                        <div class="element clickable method public method_methods" data-toggle="collapse" data-target=".method_methods .collapse">
+                            <h2>methods
+Merely a `get_class_methods()&#039; wrapped in an ArrayClass.</h2>
+                            <pre>methods() : \Devbin\libs\ToObject\ArrayClass</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Devbin.libs.ToObject.ArrayClass.html">\Devbin\libs\ToObject\ArrayClass</a></code><p><p>holding the methods of `self'.</p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_eql"></a>
+                        <div class="element clickable method public method_eql" data-toggle="collapse" data-target=".method_eql .collapse">
+                            <h2>eql
+Checks whether two objects have the same content.</h2>
+                            <pre>eql(\Devbin\libs\ToObject\ObjectClass $otherObject) : bool</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$otherObject</h4>
+                                                <code><a href="../classes/Devbin.libs.ToObject.ObjectClass.html">\Devbin\libs\ToObject\ObjectClass</a></code><p><p>The object to compare `self' to.</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>bool</code><p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_equal"></a>
+                        <div class="element clickable method public method_equal" data-toggle="collapse" data-target=".method_equal .collapse">
+                            <h2>equal
+Checks whether two objects have the same reference.</h2>
+                            <pre>equal(\Devbin\libs\ToObject\ObjectClass $otherObject) : bool</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description">
+</div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    access
+                                                </th>
+                                                <td>
+                                                                                                                                                                    <p>public</p>
+
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$otherObject</h4>
+                                                <code><a href="../classes/Devbin.libs.ToObject.ObjectClass.html">\Devbin\libs\ToObject\ObjectClass</a></code><p><p>The object to compare `self' to.</p>
+</p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>bool</code><p>
+</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                    
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_DEFAULT_ENCODING"> </a>
+                            <div class="element clickable constant  constant_DEFAULT_ENCODING" data-toggle="collapse" data-target=".constant_DEFAULT_ENCODING .collapse">
+                                <h2>Default encoding of `self&#039;.</h2>
+                                <pre>DEFAULT_ENCODING</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description">
+</div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_TYPE_STRINGCLASS"> </a>
+                            <div class="element clickable constant  constant_TYPE_STRINGCLASS" data-toggle="collapse" data-target=".constant_TYPE_STRINGCLASS .collapse">
+                                <h2>TYPE_STRINGCLASS</h2>
+                                <pre>TYPE_STRINGCLASS</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description">
+</div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        see
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_TYPE_ARRAYCLASS"> </a>
+                            <div class="element clickable constant  constant_TYPE_ARRAYCLASS" data-toggle="collapse" data-target=".constant_TYPE_ARRAYCLASS .collapse">
+                                <h2>TYPE_ARRAYCLASS</h2>
+                                <pre>TYPE_ARRAYCLASS</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description">
+</div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_TYPE_HASHCLASS"> </a>
+                            <div class="element clickable constant  constant_TYPE_HASHCLASS" data-toggle="collapse" data-target=".constant_TYPE_HASHCLASS .collapse">
+                                <h2>TYPE_HASHCLASS</h2>
+                                <pre>TYPE_HASHCLASS</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description">
+</div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_TYPE_OKAY"> </a>
+                            <div class="element clickable constant  constant_TYPE_OKAY" data-toggle="collapse" data-target=".constant_TYPE_OKAY .collapse">
+                                <h2>TYPE_OKAY</h2>
+                                <pre>TYPE_OKAY</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description">
+</div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_TYPE_SKIP"> </a>
+                            <div class="element clickable constant  constant_TYPE_SKIP" data-toggle="collapse" data-target=".constant_TYPE_SKIP .collapse">
+                                <h2>TYPE_SKIP</h2>
+                                <pre>TYPE_SKIP</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description">
+</div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property__object"> </a>
+                            <div class="element clickable property protected property__object" data-toggle="collapse" data-target=".property__object .collapse">
+                                <h2>Content of `self&#039;</h2>
+                                <pre>_object</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description">
+</div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="property__encoding"> </a>
+                            <div class="element clickable property protected property__encoding" data-toggle="collapse" data-target=".property__encoding .collapse">
+                                <h2>Encoding of `self&#039;</h2>
+                                <pre>_encoding</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description">
+</div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Devbin\libs\ToObject\ObjectClass"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Devbin.libs.ToObject.html">ToObject</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Devbin.libs.ToObject.ObjectClass.html">ObjectClass</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sat, 20 Jul 2013 02:08:12 +0200.<br/>
+    </footer>
+    </body>
+</html>
