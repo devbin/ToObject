@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Toobject by devbin</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Toobject</h1>
+        <p class="header">Handle native php types as objects</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/devbin/ToObject/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/devbin/ToObject/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/devbin/ToObject">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/devbin">devbin</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="toobject" class="anchor" href="#toobject"><span class="octicon octicon-link"></span></a>ToObject</h1>
+
+<p>ToObject is a library written in PHP. It wraps around a few primitives types and provides a more OOP-like feel by doing so. ToObject uses conventions which derive from several other languages such as C (C zero-terminated strings) and Ruby. In fact, the way in which Ruby Strings(-literals), Arrays and Hashes are used is the main inspiration for creating this library. ToObject thus contains a class for Strings, Arrays (numerical indices) and Hashes (non-numerical indices).</p>
+
+<p>ToObject consists of four primarily classes which together provide all features. It is important to note that all of these classes rely on each other and thus should not be used separately. The four classes are:</p>
+
+<pre><code>- ObjectClass
+- ArrayClass
+- HashClass
+- StringClass
+</code></pre>
+
+<p>Of those four, ObjectClass functions as a Base class. It's what java.lang.Object is in Java and what Object (or BasicObject) is in Ruby. However, ObjectClass is not as fancy as the other two :).
+The other three classes are used for arrays, hashes and strings respectively.</p>
+
+<h2>
+<a name="tldr" class="anchor" href="#tldr"><span class="octicon octicon-link"></span></a>tl;dr</h2>
+
+<p>How do I get this to work?<br>
+All you need are the contents of the <code>src</code> folder. Include <code>ToObject.php</code> and you're good to go. Be sure to use <code>use</code> and/or <code>namespace</code> though.</p>
+
+<h2>
+<a name="stringclass" class="anchor" href="#stringclass"><span class="octicon octicon-link"></span></a>StringClass</h2>
+
+<p>Starting with the most easy one, StringClass. One only has to instantiate a StringClass by passing a string to the constructor. </p>
+
+<pre><code>$str = new StringClass("hello, World!");
+</code></pre>
+
+<p>This will create a new instance with the content "hello, World!".<br>
+One could then call capitalize to make it "Hello, World!".</p>
+
+<pre><code>$str-&gt;capitalize(); // Hello, World!
+</code></pre>
+
+<p>Consult the class documentation to see what methods this class has.</p>
+
+<h2>
+<a name="collections" class="anchor" href="#collections"><span class="octicon octicon-link"></span></a>Collections</h2>
+
+<p>Slightly more advanced are the Array- and Hash- Classes, as they both deal with collections of data. And because they both deal with collections of data, something needs to distinct them from each other. An easy solution is to distinct in what is passed to the constructor and that is exactly how it is done.</p>
+
+<p>An ArrayClass needs to be passed an array to its constructor, whereas a HashClass needs to be passed an instance of stdClass. This, at the same time, solves another problem.<br>
+As mentioned above, both are collections of data. It would be nice for ToObject to recognize the elements inside the collection and determine whether it should be a nested set of ToObject classes.</p>
+
+<p>Lets just jump into an example for clarity. Imagine a database just returned a few records of employees. In native php, fetched and well, it would (or at least could) look like this.</p>
+
+<pre><code>array(
+    0 =&gt; stdClass(
+        [name] =&gt; john
+        [age] =&gt; 34
+    )
+    1 =&gt; stdClass(
+        [name] =&gt; sarah
+        [age] =&gt; 40
+    )
+)
+</code></pre>
+
+<p><strong>Note however that these records already are of the stdClass type, this is for the purpose of the example.</strong></p>
+
+<p>Instantiating an ArrayClass of this result-set would do a few things.<br>
+First, ArrayClass iterates through its collection and determines these elements are stdClasses. Whenever it encounters an stdClass, it will instantiate a HashClass for it.<br>
+Then, HashClass also iterates through its collection and determines it has a string for "name". When encountering a string, it will instantiate a StringClass for it. Integers are not dealt with and will therefore remain as is. After all progressing is done, the result-set will look like this.</p>
+
+<pre><code>ArrayClass (
+    0 =&gt; HashClass (
+        [name] =&gt; StringClass: john
+        [age] =&gt; 34
+    )
+    1 =&gt; HashClass (
+        [name] =&gt; StringClass: sarah
+        [age] =&gt; 40
+    )
+)
+</code></pre>
+
+<p>Accessing the elements is as if it really just is an array or stdClass:</p>
+
+<pre><code>$person = $arrayclass[0]; // HashClass of john/34
+$person-&gt;name; // StringClass "john"
+</code></pre>
+
+<p>In short this can be formulated as: "Both ArrayClass and HashClass iterate through their elements and try to determine whether any of these elements is to be another instance of ToObject". This ensures recursive functionality.</p>
+
+<p>Consult the source-code of "ObjectClass" and see the "builder" method for information on how this is determined.</p>
+
+<h2>
+<a name="a-note-on-hashclass" class="anchor" href="#a-note-on-hashclass"><span class="octicon octicon-link"></span></a>A Note On HashClass</h2>
+
+<p>Though it is called a hash, it actually is not.
+A real hash, like a HashTable, computes a key for its data and stores its data in an internal array. HashClass DOES NOT DO THIS. HashClass is merely a key-value storage with no extra internal computations. Internally it uses an stdClass and uses its getters and setters. HashClass basically adds functionalities to the stdClass by applying methods.</p>
+
+<h1>
+<a name="communal-methods--similarities" class="anchor" href="#communal-methods--similarities"><span class="octicon octicon-link"></span></a>Communal Methods &amp; Similarities</h1>
+
+<p>ToObject allows method chaining - which is also known as the <a href="">fluent interface</a>. Meaning that most methods will return either the current instance or a new instance of the class of which they reside, depending on what the method needs to achieve.</p>
+
+<p>Taking the last example of the <a href="##%20Collections">Collections</a> section. Retrieving the name can also be done in one step rather than to. What was written as:</p>
+
+<pre><code>$person = $arrayclass[0]; // HashClass of john/34
+$person-&gt;name; // StringClass "john"
+</code></pre>
+
+<p>Can also be written as:</p>
+
+<pre><code>$arrayclass[0]-&gt;name; // StringClass "john"
+</code></pre>
+
+<p>One more example to get the hang of it.
+As you might have noticed, the names are all lowercase. Of course this should be capitalized. Here it is:</p>
+
+<pre><code>$arrayclass[0]-&gt;name-&gt;capitalize(); // StringClass "John"
+</code></pre>
+
+<p>Enough about the fluent interface. There are some methods they have in common, these are:</p>
+
+<ul>
+<li>to_s():<br>
+Returns a string presentation of the object.</li>
+<li>to_native([$recursive = true]):<br>
+Returns (optionally recursive) a native php type. Meaning an ArrayClass will return an array(), HashClass will return an stdClass and StringClass a string.</li>
+<li>__new__():<br>
+Builds a new instance of the given type. However, this is not a public method.</li>
+</ul><p>Some classes have a few more of these conversion methods, specifically tied to their own type.</p>
+
+<p><strong>ArrayClass</strong>  </p>
+
+<ul>
+<li>to_hsh():<br>
+If the array is in the format of "[ [key1, val1], [key2, val2] ]", to_hsh() will return a HashClass in the form of ":key1 =&gt; val1, :key2 =&gt; val2".</li>
+</ul><p><strong>HashClass</strong></p>
+
+<ul>
+<li>to_a():<br>
+Returns an ArrayClass in the form of "[ [key1, val1], [key2, val2] ]".</li>
+<li>to_native_a([$recursive = true]):<br>
+Returns a native array in the form of "[ key1 =&gt; val1, key2 =&gt; val2 ]".</li>
+</ul><p>Last but not least, multibyte strings cannot be forgotten. ToObject makes use of the mb_*() functions. Assuming they do their job, only UTF-8 is tested, which is also the default encoding for instantiating any object.
+For the methods returning a new instance of the object, the new object will have the same encoding as the old one is instantiated with.
+Instantiating an object with a different encoding is easy:</p>
+
+<pre><code>$object = new &lt;any of the classes&gt;($data [ , $encoding = 'UTF-8' ]);
+</code></pre>
+
+<h1>
+<a name="prerequisites" class="anchor" href="#prerequisites"><span class="octicon octicon-link"></span></a>Prerequisites</h1>
+
+<p>In order to use this library, <a href="http://php.net/get/php-5.4.0.tar.gz/from/a/mirror">php5.4.0</a> or greater is needed. At the time of writing, <a href="http://php.net/get/php-5.4.6.tar.gz/from/a/mirror">php5.4.6</a> is the newest version.</p>
+
+<p>PHP needs to be compiled with these options:</p>
+
+<pre><code>--enable-mbstring
+--with-pcre-regex
+--enable-utf8 *
+--enable-unicode-properties *
+</code></pre>
+
+<p>*) These actually are not PHP options, but PCRE options. One would have to (re-)compile PCRE with these flags in order to use <a href="http://php.net/manual/en/regexp.reference.unicode.php">these</a> goods.</p>
+
+<p>Further info on compile options:</p>
+
+<ul>
+<li>
+<a href="http://php.net/manual/en/intro.mbstring.php">mbstring</a> - mbstring is designed to handle Unicode-based encodings.</li>
+<li>
+<a href="http://php.net/manual/en/intro.pcre.php">pcre</a> - perl compatible regular expressions.</li>
+</ul><p>For the curious ones, this is why ToObject needs PHP5.4.x:</p>
+
+<ul>
+<li>
+<a>namespaces</a> - (5.3.0) Namespaces provide a way in which to group related classes, interfaces, functions and constants.</li>
+<li>
+<a href="http://php.net/manual/en/language.oop5.traits.php">traits</a> - (5.4.0) Traits intend to reduce single-inheritance limitations.</li>
+<li>
+<a href="http://php.net/manual/en/language.types.callable.php">callable</a> - (5.4.0) typehint for callbacks.</li>
+<li>
+<a href="http://nl.php.net/manual/en/functions.anonymous.php">closures</a> - Anonymous functions.</li>
+<li>
+<a href="http://nl.php.net/manual/en/language.types.array.php">array short syntax</a> - (5.4.0) short syntax support: array() -&gt; [].</li>
+<li>
+<a href="">__DIR__</a> - (5.3.0) equivalent of dirname(__FILE__).</li>
+</ul><h1>
+<a name="obtaining-toobject" class="anchor" href="#obtaining-toobject"><span class="octicon octicon-link"></span></a>Obtaining ToObject</h1>
+
+<p>By downloading this package you should have:</p>
+
+<ul>
+<li>Source code of ToObject</li>
+<li>Source code of the Unit Tests</li>
+</ul><h1>
+<a name="tests" class="anchor" href="#tests"><span class="octicon octicon-link"></span></a>Tests</h1>
+
+<p>This package is developed on OSX Lion using php5.4.6 and tested with PHPUnit:</p>
+
+<ul>
+<li>
+<p>on a Debian box with:</p>
+
+<ul>
+<li>php5.4.6</li>
+<li>php5.4.7</li>
+</ul>
+</li>
+<li>
+<p>on a OSX ML box with:</p>
+
+<ul>
+<li>php5.5.0</li>
+</ul>
+</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
